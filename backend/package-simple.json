@@ -1,0 +1,14 @@
+{
+  "name": "lumilink-backend-simple",
+  "version": "1.0.0",
+  "description": "Simple LumiLink Backend",
+  "main": "test-server.js",
+  "scripts": {
+    "start": "node test-server.js",
+    "test": "node test-server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  }
+}

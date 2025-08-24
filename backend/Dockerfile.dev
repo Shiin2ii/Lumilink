@@ -1,0 +1,30 @@
+# Development Dockerfile for LumiLink Backend
+FROM node:20-alpine
+
+# Install additional tools for development
+RUN apk add --no-cache git
+
+# Thiết lập thư mục làm việc
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Cài đặt dependencies (bao gồm dev dependencies)
+RUN npm install && npm cache clean --force
+
+# Copy source code
+COPY . .
+
+# Tạo thư mục cần thiết
+RUN mkdir -p logs uploads
+
+# Expose port 3001
+EXPOSE 3001
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD node -e "require('http').get('http://localhost:3001/health', (res) => { process.exit(res.statusCode === 200 ? 0 : 1) })"
+
+# Start development server với nodemon
+CMD ["npm", "run", "dev"]
