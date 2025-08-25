@@ -53,4 +53,4 @@
 
 - Kết quả test sẽ hiển thị số lượng passed/failed/skipped và chi tiết từng API.
 
-> Xem thêm chi tiết trong file `test-api.js` và tài liệu API trong `API_DOCUMENTATION.md`.
+> Xem thêm chi tiết trong file `test-api.js` và tài liệu API trong : ([API Documentation](https://github.com/Shiin2ii/Lumilink/blob/main/backend/API_DOCUMENTATION.md)).
